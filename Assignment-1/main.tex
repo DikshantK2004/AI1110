@@ -1,0 +1,149 @@
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+%    \usepackage{color}                                            %%
+%    \usepackage{array}                                            %%
+%    \usepackage{longtable}                                        %%
+%    \usepackage{calc}                                             %%
+%    \usepackage{multirow}                                         %%
+%    \usepackage{hhline}                                           %%
+%    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+%    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\title{AI1110 Assignment}
+\author{Dikshant Khandelwal\\
+		CS22BTECH11017}
+\begin{document}
+%
+
+\maketitle
+
+\textbf{12.13.5.4}: Five cards are drawn successively with replacement from a well-shuffled deck
+of 52 cards. What is the probability that
+\begin{enumerate}
+    \item[(i)] all the five cards are spades?
+    \item[(ii)] only 3 cards are spades?
+    \item[(iii)] none is a spade?
+\end{enumerate}
+
+\noindent\textbf{Answer}:\\[8pt]
+A deck has 52 cards among which 13 are spades. Since we are replacing drawn cards ,the probability of getting spade on any draw, $p = \frac{13}{52} = \frac{1}{4}$. This is a binomial distribution where getting a card of spades is considered success.\\[6pt]
+The probability of getting $r$ successes in a binomial distribution having $n$ independent Bernoulli trials
+and probability of success in each Bernoulli trial being $p$ is 
+$$
+P(r) =  \displaystyle\binom{n}{r} p^{r}(1-p)^{n-r}
+$$
+
+Here, $p = \displaystyle\frac{1}{4}$ and $n = 5$.\\[8pt]
+% Part (i)
+(i) Probability that all 5 cards are spades is $P(5)$.
+$$
+P(5) = \binom{5}{5} \left(\frac{1}{4}\right)^{5} \left(\frac{3}{4}\right)^{0} \\
+     = \frac{1}{1024}
+     \approx 0.00098
+$$\\
+% Part (ii)
+(ii) Probability that only 3 cards are spades is $P(3)$.
+$$
+P(3) = \binom{5}{3} \left(\frac{1}{4}\right)^{3} \left(\frac{3}{4}\right)^{2} \\
+     = \frac{45}{512}
+     \approx 0.08789
+$$\\
+% Part (iii)
+(iii) Probability that no card is spade is $P(0)$.
+$$
+P(0) = \binom{5}{0} \left(\frac{1}{4}\right)^{0} \left(\frac{3}{4}\right)^{5} \\
+     = \frac{243}{1024}
+     \approx 0.23730
+$$
+
+\end{document}
+
