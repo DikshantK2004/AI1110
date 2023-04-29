@@ -150,19 +150,19 @@ columns=fullflexible
 
 \textbf{Exercise 12.13.5.4} Five cards are drawn successively with replacement from a well-shuffled deck
 of 52 cards. What is the probability that
-\begin{enumerate}
-    \item[(i)] all the five cards are spades?
-    \item[(ii)] only 3 cards are spades?
-    \item[(iii)] none is a spade?
+\begin{enumerate}[label=(\roman*)]
+    \item all the five cards are spades?
+    \item only 3 cards are spades?
+    \item none is a spade?
 \end{enumerate}
 
-\textbf{Solution.}  A deck has 52 cards among which 13 are spades. Since we are replacing drawn cards ,the probability of getting spade on any draw, \(p = \frac{13}{52} = \frac{1}{4}\). This is a binomial distribution where getting a card of spades is considered success.
+\textbf{Solution.}  A deck has 52 cards among which 13 are spades. Since we are replacing drawn cards ,the probability of getting spade on any draw, $p = \frac{13}{52} = \frac{1}{4}$. This is a binomial distribution where getting a card of spades is considered success.
 
-The probability of getting \(r\) successes in a binomial distribution having \(n)\) independent Bernoulli trials
-and probability of success in each Bernoulli trial being \(p\) is 
+The probability of getting $r$ successes in a binomial distribution having $n)$ independent Bernoulli trials
+and probability of success in each Bernoulli trial being $p$ is 
 \begin{align} \pr{r} = \comb{n}{r} p^{r}(1-p)^{n-r} \end{align}
 
-Here, \(p = \frac{1}{4}\) and \(n = 5\).
+Here, $p = \frac{1}{4}$ and $n = 5$.
 
 % Part (i)
 \begin{enumerate}[label=(\roman*)]
