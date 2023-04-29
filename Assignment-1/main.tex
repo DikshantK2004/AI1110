@@ -160,29 +160,38 @@ of 52 cards. What is the probability that
 
 The probability of getting $r$ successes in a binomial distribution having $n$ independent Bernoulli trials
 and probability of success in each Bernoulli trial being $p$ is 
-\begin{align} \pr{r} = \comb{n}{r} p^{r}(1-p)^{n-r} \end{align}
+\begin{align} \label{eq:1} \pr{X=r} &= \comb{n}{r} p^{r}(1-p)^{n-r} \end{align}
 
 Here, $p = \frac{1}{4}$ and $n = 5$.
 
+Formally, let X be the random variable denoting number of spades we get in 5 trials.
+\begin{align}\therefore X\in{\{0, 1, 2, 3, 4, 5\}} 
+\end{align}
+\begin{align}
+    X &\sim Bin\left(5 , \frac{1}{4}\right) \\
+    \pr{r} &= \comb{5}{r} \left(\frac{1}{4}\right)^{r}
+    \left(\frac{3}{4}\right)^{5-r} 
+\end{align}
+
 % Part (i)
 \begin{enumerate}[label=(\roman*)]
-    \item Probability  that  all 5 cards are spades is \pr{5}.
+    \item Probability  that  all 5 cards are spades is \pr{X=5}.
 \begin{align}
-\pr{5} &= \comb{5}{5}\left(\frac{1}{4}\right)^{5} \left(\frac{3}{4}\right)^{0}\\
+\pr{X=5} &= \comb{5}{5}\left(\frac{1}{4}\right)^{5} \left(\frac{3}{4}\right)^{0}\\
      &= \frac{1}{1024} \approx 0.00098
 \end{align}
 
 % Part (ii)
-\item Probability that only 3 cards are spades is \pr{3}.
+\item Probability that only 3 cards are spades is \pr{X=3}.
 \begin{align}
-\pr{3} &= \comb{5}{5} \left(\frac{1}{4}\right)^{3} \left(\frac{3}{4}\right)^{2}\\
+\pr{X=3} &= \comb{5}{5} \left(\frac{1}{4}\right)^{3} \left(\frac{3}{4}\right)^{2}\\
      &= \frac{45}{512} \approx 0.08789
 \end{align}
 
 % Part (iii)
-\item Probability that no card is spade is \pr{0}.
+\item Probability that no card is spade is \pr{X=0}.
 \begin{align}
-\pr{0} &= \comb{5}{0} \left(\frac{1}{4}\right)^{0} \left(\frac{3}{4}\right)^{5}\\
+\pr{X=0} &= \comb{5}{0} \left(\frac{1}{4}\right)^{0} \left(\frac{3}{4}\right)^{5}\\
      &= \frac{243}{1024} \approx 0.23730
 \end{align}
 \end{enumerate}
