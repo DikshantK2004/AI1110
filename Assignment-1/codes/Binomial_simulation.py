@@ -57,11 +57,8 @@ err_n0 = np.size(err_ind0)
 print( "Probability of getting 0 spades is:", err_n0/simlen)
 
 
-
-spades = (np.linspace(0 , 5 , 6))
-
-values = np.array([np.size(np.nonzero(data_binom == i))/simlen for i in range(0,6)])
-
+spades,values = np.unique(data_binom , return_counts=True)
+values = values/simlen
 
 
 #plotting pmfs using matplotlib
@@ -69,10 +66,11 @@ plt.figure(figsize = (16 ,10))
 plt.xlabel("Number of spades")
 plt.ylabel("PMF")
 plt.ylim(0 , 0.45)
+plt.xlim(-0.5 , 6)
 ax=plt.gca()
 # adjust the y axis scale.
 ax.locator_params('y', nbins=20)
 plt.stem(spades, values, linefmt='b-', markerfmt='ro', label = "Observation")
-plt.plot(spades , np.array([binom.pmf(k , n , p) for k in range(0 , 6)]) , 'go' , label = "Theoretical")
+plt.plot(spades , np.array(binom.pmf(spades , n , p)) , 'go' , label = "Theoretical")
 plt.legend()
 plt.show()

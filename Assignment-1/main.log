@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.4.24)  29 APR 2023 16:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.4.24)  29 APR 2023 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1227,9 +1227,6 @@ File: ts1txr.fd 2000/12/15 v3.1
 
 ] (./main.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
 Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
@@ -1239,10 +1236,10 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29854 strings out of 476091
- 589077 string characters out of 5794081
+ 29853 strings out of 476091
+ 589071 string characters out of 5794081
  1876330 words of memory out of 5000000
- 49601 multiletter control sequences out of 15000+600000
+ 49600 multiletter control sequences out of 15000+600000
  571430 words of font info for 148 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  101i,9n,96p,1172b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
