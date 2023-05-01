@@ -159,14 +159,31 @@ resulted in a number less than 4.
 \textbf{Solution.} Let $X$ and $Y$ be the random variables denoting the number which comes up on black and red die respectively.
 
 \begin{align}
-    X &\in \cbrak{1, 2, 3, 4, 5, 6}\\
-    Y &\in \cbrak{1, 2, 3, 4, 5, 6}
+\label{prdice}
+\pr{X= n } = \pr{Y = n} = 
+\begin{cases}
+\frac{1}{6} & 1 \le n \le 6
+\\
+0 & otherwise
+\end{cases}
 \end{align}
 
-where, for $\forall k \in \cbrak{1, 2, 3, 4, 5, 6}$
+Let $Z = X + Y$,
 \begin{align}
-    \pr{X=k} = \pr{Y =k} = \frac{1}{6}
+\pr{Z= n} &= 
+\begin{cases}
+0 & n \le 1
+\\
+\frac{n-1}{36} &  2 \le n \le  7
+\\
+\frac{13-n}{36} & 7 < n \le 12
+\\
+0 & n > 12
+\end{cases}
+\label{prsum}
 \end{align}
+
+
 Also, conditional probability of $X>r$ given 
 $Y= k$  is:
 \begin{align}
@@ -175,39 +192,55 @@ $Y= k$  is:
 
 $\because$Rolling of black and red die is independent of each other,
 \begin{align}
-    \therefore \label{eq2}\pr{X=r , Y=k} &= \pr{X=r}\pr{Y= k}
+    \therefore \label{eq2}\pr{X=r , Y=k} &= \pr{X=r}\pr{Y= k}\\
+    \pr{Z= k , X = r} &= \pr{Y = k -r ,X = r}\\
+                      &= \pr{Y= k-r}\pr{X =r}
+\end{align}
+\begin{align}
+     \therefore \label{zx} 
+            \pr{Z= k , X = r} = 
+            \begin{cases}
+                \frac{1}{36} &   0 <r \le 6, 0<k -r \le 6 ,\\
+                0 & otherwise
+            \end{cases} 
+\end{align}
+
+ WLOG, $Z$ and $Y$ follow,
+
+\begin{align}
+    \therefore \label{zy} 
+            \pr{Z= k , Y = r} = 
+            \begin{cases}
+                \frac{1}{36} &   0 <r \le 6, 0<k-r\le 6 \\
+                0 & otherwise
+            \end{cases} 
 \end{align}
 
 \begin{enumerate}[label=(\alph*)]
     \item here we need to find,
     \begin{align}
-        \pr{X + Y> 9 | X = 5} &= \frac{\pr{X + Y> 9, X = 5}}{\pr{X = 5}}\\
-                              &= \frac{\sum_{i = 5}^{6}\pr{X=5, Y = i}}{\pr{X = 5}}\\
-                              &= \frac{\sum_{i = 5}^{6}\pr{X=5, Y = i}}{\pr{X = 5}}
+        \pr{Z> 9 | X = 5} &= \frac{\pr{Z> 9, X = 5}}{\pr{X = 5}}\\
+                              &= \frac{\sum_{i = 10}^{12}\pr{X=5, Z = i}}{\pr{X = 5}}  
     \end{align}
-    from $\eqref{eq2}$
-    \begin{align}
-        \pr{X + Y> 9 | X = 5} &= \frac{\sum_{i = 5}^{6}\pr{X= 5}\pr{Y = i}}{\pr{X = 5}}   \\
-                              &= \pr{Y= 5} + \pr{Y=6}\\
-                              &= \frac{1}{6}+\frac{1}{6}\\
-                              &= \frac{2}{6}\\
-                              &= \frac{1}{3}\approx 0.33
-                                \end{align}
 
+    from $\eqref{zx}$
+    \begin{align}
+        \pr{Z> 9 | X = 5}     &= \frac{\frac{1}{36} + \frac{1}{36} +0}{\frac{1}{6} }\\
+                              &= \frac{2}{6}\\
+                              &= \frac{1}{3} \approx 0.33
+    \end{align}
 
 \item here, we need to find,
 \begin{align}
-\pr{X + Y = 8 | Y < 4} &= \frac{\pr{X + Y = 8, Y < 4}}{\pr{Y < 4}}\\
-                       &= \frac{\sum_{i = 2}^{3}\pr{X= 8 -i, Y = i}}{\sum_{i = 1}^{3}\pr{Y = i}}
+\pr{Z = 8 | Y < 4} &= \frac{\pr{Z = 8, Y < 4}}{\pr{Y < 4}}\\
+                       &= \frac{\sum_{i = 1}^{3}\pr{Z = 8, Y = i}}{\sum_{i = 1}^{3}\pr{Y = i}}
 \end{align}
-from $\eqref{eq2}$
+from $\eqref{zy}$
 
 \begin{align}
-    \pr{X + Y = 8 | Y < 4} &= \frac{\sum_{i = 2}^{3}\pr{X= 8 -i}\pr{ Y = i}}{\sum_{i = 1}^{3}\pr{Y = i}}\\
-    &= \frac{\brak{\frac{1}{6}}\brak{\frac{1}{6}} + \brak{\frac{1}{6}}\brak{\frac{1}{6}}}{3\cdot\brak{\frac{1}{6}}}\\
+    \pr{Z = 8 | Y < 4} &= \frac{ 0 + \frac{1}{36}+\frac{1}{36}}{\frac{1}{6} +\frac{1}{6} +\frac{1}{6}}\\
     &= \frac{1}{9} \approx 0.11
 \end{align}
-
 \end{enumerate}
 
 
