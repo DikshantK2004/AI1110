@@ -168,9 +168,8 @@ resulted in a number less than 4.
 \end{cases}
 \end{align}
 
-Let $Z = X + Y$,
 \begin{align}
-\pr{Z= n} &= 
+\pr{X+Y= n} &= 
 \begin{cases}
 0 & n \le 1
 \\
@@ -185,8 +184,8 @@ Let $Z = X + Y$,
 
 Let us define cumulative frequency distribution of some random variable A,
 \begin{align}
-    F_{A}(i) = \pr{A \le i}\\
-    \therefore  \label{cdf}F_{X}(i) = F_{Y}(i) = 
+    F_{A}(i) &= \pr{A \le i}\\
+    \therefore  \label{cdf}F_{X}(i) = F_{Y}(i) &= 
               \begin{cases} 0  & i<1\\
                             \frac{i}{6} & 0 < i \le 6\\
                             1 & i> 6
@@ -207,19 +206,15 @@ $\because$Rolling of black and red die is independent of each other,
 \begin{enumerate}[label=(\alph*)]
     \item Let us define,
     \begin{align}
-        F_{Z, X}(k , r) &= \pr{Z \le k , X =r}
-    \end{align}
-
-    Since , $Z = X + Y$,
-    \begin{align}
-        \label{a} F_{Z, X}(k , r) &=  F_{Y}(k -r)\pr{X = r}
+        F_{X+Y, X}(k , r) &= \pr{X+Y \le k , X =r}\\
+        \label{a} F_{X+Y, X}(k , r) &=  F_{Y}(k -r)\pr{X = r}
     \end{align}
 
     
     Using $\eqref{a}$
     \begin{align}
-        &\pr{Z> 9 | X = 5} \\&= \frac{\pr{Z> 9, X = 5}}{\pr{X = 5}}\\
-                          &= \frac{F_{Z ,X}(12 , 5) - F_{Z ,X}(9 , 5)}{\pr{X = 5}}\\
+        &\pr{X+Y> 9 | X = 5} \\&= \frac{\pr{X+Y> 9, X = 5}}{\pr{X = 5}}\\
+                          &= \frac{F_{X+Y ,X}(12 , 5) - F_{X+Y ,X}(9 , 5)}{\pr{X = 5}}\\
                           &= \frac{F_{Y}(7)\pr{X = 5} - F_{Y}(4)\pr{X = 5}}{\pr{X = 5}}\\
                           &= F_{Y}(7) -F_{Y}(4)\\
                           &= 1 - \frac{4}{6}\\
@@ -227,30 +222,26 @@ $\because$Rolling of black and red die is independent of each other,
     \end{align}
 
     \begin{align}
-        \therefore \pr{Z> 9 | X = 5} = \frac{1}{3}\approx 0.33
+        \therefore \pr{X+Y> 9 | X = 5} = \frac{1}{3}\approx 0.33
     \end{align}
     
 \item Let us define,
 
     \begin{align}
-        F_{Z, Y}(k , r) &= \pr{Z = k , Y \le r}
-    \end{align}
-
-    Since , $Z = X + Y$,
-    \begin{align}
-        \label{b} F_{Z, Y}(k , r) &=  \sum_{i =1}^{r-1}\pr{Y = i }\pr{X = k - i}
+        F_{X+Y, Y}(k , r) &= \pr{X+Y = k , Y \le r}\\
+        \label{b} F_{X+Y, Y}(k , r) &=  \sum_{i =1}^{r-1}\pr{Y = i }\pr{X = k - i}
     \end{align}
 
 Using $\eqref{b}$
 \begin{align}
-\pr{Z = 8 | Y < 4} &= \frac{\pr{Z = 8, Y < 4}}{\pr{Y < 4}}\\
-                       &= \frac{F_{Z, Y}(8 , 3)}{ F_{Y}(3)}\\
+\pr{X+Y = 8 | Y < 4} &= \frac{\pr{X+Y = 8, Y < 4}}{\pr{Y < 4}}\\
+                       &= \frac{F_{X+Y, Y}(8 , 3)}{ F_{Y}(3)}\\
                        &= \frac{\brak{\frac{2}{36}}}{\frac{3}{6}}\\
                        &= \frac{1}{9} \approx 0.11   
 \end{align}
 
 \begin{align}
-        \therefore \pr{Z = 8 | Y <  5} = \frac{1}{9}\approx 0.11
+        \therefore \pr{X+Y = 8 | Y <  5} = \frac{1}{9}\approx 0.11
     \end{align}
 \end{enumerate}
 
