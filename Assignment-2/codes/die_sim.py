@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+from matplotlib.patches import Rectangle
 
 simlen = 10000
 
@@ -41,20 +41,28 @@ print("Actual value of probability of getting sum = 8 given Y < 4 is: " + str(p2
 
 #plotting
 
-fig,axes = plt.subplots(2,figsize = (12,10))
+fig,axes = plt.subplots(2,figsize = (12,20))
+
+eq9X = np.array([1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6])
+eq9Y = np.array([1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3])
 #plot-1
-axes[0].set_title("Plot for probabilites of Z")
-axes.flat[0].set(xlabel = 'Z' , ylabel = 'pZ')
-axes[0].stem(possible_Z , simpZ , label = 'Actual', markerfmt = 'ro' , basefmt = 'g-' ,linefmt = 'b')
-axes[0].plot(possible_Z , pZ , 'yo',label = 'Theoretical')
+axes[0].set_title("Plot for verifying current problem")
+axes.flat[0].set(xlabel = 'Questions' , ylabel = 'Answers')
+axes[0].stem([1, 2] , [p1theo,p2theo] , label = 'Actual', markerfmt = 'ro' , basefmt = 'g-' ,linefmt = 'b')
+axes[0].set_xticks([1,2])
+axes[0].plot([1, 2] , [p1sim, p2sim], 'yo',label = 'Theoretical')
 axes[0].legend()
 
 #plot-2
-axes[1].set_title("Plot for verifying current problem")
-axes.flat[1].set(xlabel = 'Questions' , ylabel = 'Answers')
-axes[1].stem([1, 2] , [p1theo,p2theo] , label = 'Actual', markerfmt = 'ro' , basefmt = 'g-' ,linefmt = 'b')
-axes[1].plot([1, 2] , [p1sim, p2sim], 'yo',label = 'Theoretical')
+axes[1].set_title("X+Y = 8 | Y < 4")
+axes.flat[1].set(xlabel = 'X' , ylabel = 'Y')
+axes[1].set_xlim(-0.2 , 7)
+axes[1].set_ylim(-0.2 , 7)
+axes[1].add_patch(Rectangle((0.8, 0.8), 5.4,2.4 , facecolor = '#0000f0' ,fill =True , alpha = 0.2,label = 'Y<4'))
+axes[1].scatter(eq9X,eq9Y , label = 'Integral points where Y<4')
+axes[1].plot(possible,8-possible,'yo-' , label ='X+Y = 8')
 axes[1].legend()
+
 plt.show()
 
 
