@@ -185,7 +185,7 @@ $X$ and $Y$ are independent random variables.
 \item
 
 \begin{align}
-\pr{X+Y = 8 | Y < 4} &= \frac{\pr{X+Y = 8, Y < 4}}{\pr{Y < 4}}
+\label{q} \pr{X+Y = 8 | Y < 4} &= \frac{\pr{X+Y = 8, Y < 4}}{\pr{Y < 4}}
 \end{align}
 
 \begin{figure}[h!]
@@ -195,21 +195,30 @@ $X$ and $Y$ are independent random variables.
 \end{figure}
 
 
-The integral points (X,Y) in Fig\eqref{fig:1} in the blue shaded region(blue points) are the points satisfying 
-$Y<4$. There are 18 such blue dots in blue shaded region out of $36$ possible pairs of $(X,Y)$.
 
-
+Probability of an event $E$, written as $\pr{E}$
 \begin{align}
-    \pr{Y < 4} &= \frac{18}{36}
+\pr{E}=\frac{\text{Number of outcomes favourable to $E$}}{\text{Total Number of possible outcomes }}
 \end{align}
 
-The line represents X+Y = 8.
-Therefore,the red dots which lie on both the line and inside the shaded region represent $X+Y = 8 ,Y < 4$
-There are $2$ red dots out of $36$ possible pairs of $(X,Y)$
+Total number of $(X,Y)$ such that $0<X\le 6 , 0<Y\le 6$ is 36
+
+In Fig\eqref{fig:1}, the blue region represent $Y < 4$ and the line is $X+Y = 8$, therefore red dots represent,
+$X+Y = 8,Y < 4$
 \begin{align}
-    \pr{X+Y = 8, Y<4} &= \frac{2}{36}\\
-    \therefore \pr{X+Y = 8 | Y < 4} &= \frac{1}{9} \approx
-     0.11
+    \pr{Y < 4} &= \frac{\text{Number of $(X,Y)$ in blue region}}{36}\\
+    &= \frac{18}{36}
+\end{align}
+
+from $\eqref{q}$,
+
+\begin{align}
+    \pr{X+Y = 8, Y<4} &= \frac{\text{Number of red dots $(X,Y)$ }}{36}\\
+         &=\frac{2}{36} 
+    \end{align}
+    \begin{align}
+    \therefore \pr{X+Y = 8 | Y < 4} &= \frac{\brak{\frac{2}{36}}}{\brak{\frac{18}{36}}}\\
+    &=\frac{1}{9} \approx 0.11
 \end{align}
 
 
