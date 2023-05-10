@@ -202,17 +202,18 @@ Probability of an event $E$, written as $\pr{E}$
 \end{align}
 
 \begin{align}
-    \pr{Y < 4} &= \frac{\text{Number of $(X,Y)$ in blue region}}{36}\\
-    &= \frac{\brak{3}\cdot\brak{6}}{36}\\
-    &= \frac{18}{36}
+    \pr{Y < 4} &= \frac{\text{Number of $(X,Y)$ in blue region}}{\text{Number of $(X,Y)$ in gray region }}\\
+    &= \frac{\brak{3}\cdot\brak{6}}{\brak{6}\cdot\brak{6}}\\
+    &= \frac{1}{2}
 \end{align}
 
 \begin{align}
-    \pr{X+Y = 8, Y<4} &= \frac{\text{Number of red dots $(X,Y)$ }}{36}\\
-         &=\frac{2}{36} 
+    \pr{X+Y = 8, Y<4} &= \frac{\text{Number of red dots $(X,Y)$ }}{\text{Number of $(X,Y)$ in gray region }}\\
+    &= \frac{2}{\brak{6}\cdot\brak{6}}\\
+         &=\frac{1}{18} 
     \end{align}
     \begin{align}
-    \therefore \pr{X+Y = 8 | Y < 4} &= \frac{\brak{\frac{2}{36}}}{\brak{\frac{18}{36}}}\\
+    \therefore \pr{X+Y = 8 | Y < 4} &= \frac{\brak{\frac{1}{18}}}{\brak{\frac{1}{2}}}\\
     &=\frac{1}{9} \approx 0.11
 \end{align}
 
