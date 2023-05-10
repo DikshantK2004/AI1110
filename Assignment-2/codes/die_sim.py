@@ -43,8 +43,11 @@ print("Actual value of probability of getting sum = 8 given Y < 4 is: " + str(p2
 
 fig,axes = plt.subplots(2,figsize = (12,20))
 
-eq9X = np.array([1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6])
-eq9Y = np.array([1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3])
+possible1 = possible.reshape(1,6)
+eq9X = np.repeat(possible1,3, axis = 1)
+
+pos = np.array([[1,2,3]])
+eq9Y = np.repeat(pos , 6 , axis = 0)
 #plot-1
 axes[0].set_title("Plot for verifying current problem")
 axes.flat[0].set(xlabel = 'Questions' , ylabel = 'Answers')
@@ -53,14 +56,21 @@ axes[0].set_xticks([1,2])
 axes[0].plot([1, 2] , [p1sim, p2sim], 'yo',label = 'Theoretical')
 axes[0].legend()
 
+validX = np.repeat(possible,6).reshape(6,6)
+validY = np.repeat(possible1,6 ,axis = 0)
+print(validX)
+print(validY)
 #plot-2
 axes[1].set_title("X+Y = 8 | Y < 4")
 axes.flat[1].set(xlabel = 'X' , ylabel = 'Y')
 axes[1].set_xlim(-0.2 , 7)
 axes[1].set_ylim(-0.2 , 7)
-axes[1].add_patch(Rectangle((0.8, 0.8), 5.4,2.4 , facecolor = '#0000f0' ,fill =True , alpha = 0.2,label = 'Y<4'))
+axes[1].add_patch(Rectangle((0.6, 0.6), 5.8,5.8 , edgecolor = '#000000',facecolor = '#00000020' ,fill =True , label = 'Valid region for die roll results'))
+axes[1].add_patch(Rectangle((0.8, 0.8), 5.4,2.4 , edgecolor = 'blue',facecolor = '#0000f020' ,fill =True ,label = 'Y<4'))
+axes[1].scatter(validX,validY ,c = 'black' ,label = 'Integral points (X,Y)')
 axes[1].scatter(eq9X,eq9Y , label = 'Integral points where Y<4')
-axes[1].plot(possible,8-possible,'yo-' , label ='X+Y = 8')
+
+axes[1].plot(possible[1:],8-possible[1:],'yo-' , label ='X+Y = 8')
 axes[1].legend()
 
 plt.show()
