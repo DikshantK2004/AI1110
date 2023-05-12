@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.4.24)  12 MAY 2023 08:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.4.24)  12 MAY 2023 08:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1230,10 +1230,10 @@ Overfull \hbox (3.30428pt too wide) detected at line 184
  []
 
 Package epstopdf Info: Source file: <figs/figure.eps>
-(epstopdf)                    date: 2023-05-10 22:59:01
+(epstopdf)                    date: 2023-05-12 08:53:00
 (epstopdf)                    size: 204176 bytes
 (epstopdf)             Output file: <figs/figure-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-05-10 23:00:02
+(epstopdf)                    date: 2023-05-12 08:53:00
 (epstopdf)                    size: 7800 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/figure-eps-converted-
 to.pdf figs/figure.eps>
@@ -1285,7 +1285,7 @@ nts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb
 e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 72400 bytes).
+Output written on main.pdf (2 pages, 72538 bytes).
 PDF statistics:
  102 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
