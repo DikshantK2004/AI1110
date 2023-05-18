@@ -114,6 +114,7 @@
 %new commands 
 \newcommand{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
 \newcommand{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\providecommand{\cond}[2]{#1\middle|#2}
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -140,7 +141,7 @@ columns=fullflexible
 \author{
   CS22BTECH11017\\[4pt]
   Dikshant Khandelwal\\
-  12th May, 2023
+  16th May, 2023
   % <-this % stops a space
 }
 \begin{document}
@@ -151,11 +152,15 @@ columns=fullflexible
 \textbf{Exercise 12.13.1.14}
 Given that 2 numbers appearing on throwing two dice are different. Find the probability of the event ‘ the sum of numbers on the dice is 4’ .
 
-\textbf{Solution.} Let $X$ and $Y$ be the random variables denoting the number which comes up on Die$1$ and Die$2$ respectively.\\
+\textbf{Solution.} Let $X$ and $Y$ be two random variables.
 
+\begin{table}[h]
+    \label{table:0}
+    \input{tables/table1.tex}
+   \end{table}
 
 \begin{align}
-    \pr{X+Y = 4|X \neq Y} &= \frac{\pr{X+Y = 4,X \neq Y}}{\pr{X\neq Y}}
+    \pr{\cond{X+Y = 4}{X \neq Y}} &= \frac{\pr{X+Y = 4,X \neq Y}}{\pr{X\neq Y}}
 \end{align}
 
 Probability of an event $E$, written as $\pr{E}$
@@ -169,7 +174,11 @@ Probability of an event $E$, written as $\pr{E}$
     &= \frac{5}{6}
 \end{align}
 
-Let $A$ be the event $X+Y = 4$ and $B$ be the event $X \ne Y$
+Let $A$ and $B$ be two events.
+\begin{table}[h]
+  \label{table:1}
+  \input{tables/table2.tex}
+ \end{table}
 \begin{align}
     A &= A(B + B^{\prime})\\
        &= AB + AB^{\prime}\\
@@ -213,8 +222,8 @@ Let $A$ be the event $X+Y = 4$ and $B$ be the event $X \ne Y$
 \end{align}
 
 \begin{align}
-    \pr{X+Y = 4| X \ne Y} &= \frac{\brak{\frac{1}{18}}}{\brak{\frac{5}{6}}}\\
-    \therefore \pr{X+Y = 4| X \ne Y} &= \frac{1}{15}
+  \pr{\cond{X+Y = 4}{X \neq Y}} &= \frac{\brak{\frac{1}{18}}}{\brak{\frac{5}{6}}}\\
+    \therefore \pr{\cond{X+Y = 4}{X \neq Y}} &= \frac{1}{15}
 \end{align}
 \end{document}
 
